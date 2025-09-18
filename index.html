@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MY shop</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+    <link rel="stylesheet" href="mystyle.css">
+</head>
+<body>
+
+<div class="w3-top">
+    <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+        <a href="#home" class="w3-bar-item w3-button">Douceur d’Airi</a>
+        
+        <div class="w3-right w3-hide-small">
+            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#menu" class="w3-bar-item w3-button">dessert</a>
+            <a href="my1stcategory.html" class="w3-bar-item w3-button">Food</a>
+            <a href="my2stcategory.html" class="w3-bar-item w3-button">Seasonal menu</a>
+            <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+        </div>
+    </div>
+</div>
+
+<div class="w3-display-container" id="slideshow-container">
+    <img class="mySlides active" src="resources/FrenchToast.jpg" alt="French Toast">
+    <img class="mySlides" src="resources/Cookie.jpg" alt="Cookie">
+    <img class="mySlides" src="resources/HokkaidoPudding.jpg" alt="Hokkaido Pudding">
+    <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+    <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+</div>
+
+
+<script>
+    var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+        x[i].classList.remove("active"); // เอา active ออกก่อน
+    }
+    slideIndex++;
+    if (slideIndex > x.length) {slideIndex = 1}
+    x[slideIndex-1].classList.add("active"); // ใส่ active ให้สไลด์ปัจจุบัน
+    setTimeout(showSlides, 7000);
+}
+
+function plusDivs(n) {
+    var x = document.getElementsByClassName("mySlides");
+    for (var i = 0; i < x.length; i++) {
+        x[i].classList.remove("active");
+    }
+    slideIndex += n;
+    if (slideIndex > x.length) {slideIndex = 1}
+    if (slideIndex < 1) {slideIndex = x.length}
+    x[slideIndex-1].classList.add("active");
+}
+</script>
+
+<header class="bgimg w3-display-container w3-grayscale-min" id="home">
+    <div class="w3-display-bottomleft w3-padding-large w3-text-white">
+        <h1><span class="header-text">Gâteau<br>d Intention</span><br></h1>
+    </div>
+</header>
+
+<div class="w3-content" style="max-width:1100px">
+
+    <div class="w3-row w3-padding-64" id="about">
+        <div class="w3-col m6 w3-padding-large w3-hide-small">
+            <img src="resources/Cremebrulee_pancake.png" class="w3-round w3-image" alt="Cremebrulee Pancake" width="2400" height="2000">
+        </div>
+
+        <div class="w3-col m6 w3-padding-large">
+            <h1 class="w3-center">About Douceur d’Airi</h1><br>
+            <h5 class="w3-center">Tradition since 1889</h5>
+            <p class="w3-large">Founded with a passion for refined flavors, our café is where Japanese elegance meets French artistry. Every dessert is a harmonious blend of delicate textures and exquisite taste, crafted to bring joy in every bite.
+                We take pride in using only the finest seasonal ingredients — from Hokkaido milk to artisanal French chocolate — ensuring freshness, authenticity, and unmatched quality. Each creation reflects our belief that desserts are not just treats, but experiences to be savored.</p>
+            <p class="w3-large w3-text-grey w3-hide-medium">At our café, sweetness is more than flavor — it’s a moment of happiness shared.</p>
+        </div>
+    </div>
+
+    <div class="w3-container" id="menu">
+        <div class="w3-content" style="max-width:700px">
+            <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">THE Dessert</span></h5>
+            <div class="w3-row w3-center w3-card w3-padding">
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Eat');" id="myLink">
+                    <div class="w3-col s6 tablink">Eat</div>
+                </a>
+                <a href="javascript:void(0)" onclick="openMenu(event, 'Drinks');">
+                    <div class="w3-col s6 tablink">Drink</div>
+                </a>
+            </div>
+
+            <div id="Eat" class="w3-container menu w3-padding-48 w3-card">
+
+    <div class="menu-item">
+      <div> 
+        <h5>Strawberry Shortcake 210 Bath</h5>
+        <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins</p>
+      </div>
+      <img src="resources/Strawberryshortcake.jpg" alt="Strawberry Shortcake" class="menu-image">
+    </div>
+
+    <div class="menu-item">
+      <div>
+        <h5>Chocolate Cake 190 Bath</h5>
+        <p class="w3-text-grey">Rich chocolate layered cake</p>
+      </div>
+      <img src="resources/ChocolateCake.jpg" alt="Chocolate Cake" class="menu-image">
+    </div>
+
+    <div class="menu-item">
+      <div>
+        <h5>Matcha Tiramisu 190 Bath</h5>
+        <p class="w3-text-grey">Soft layers of matcha and mascarpone cream.</p>
+      </div>
+      <img src="resources/MatchaTiramisu.jpg" alt="Matcha Tiramisu" class="menu-image">
+    </div>
+    
+    <div class="menu-item">
+      <div>
+        <h5>MontBlanc 150 Bath</h5>
+        <p class="w3-text-grey">Rich chestnut cream on a chocolate base.</p>
+      </div>
+      <img src="resources/MontBlanc.jpg" alt="MontBlanc Chocolate" class="menu-image">
+    </div>
+</div>
+
+            <div id="Drinks" class="w3-container menu w3-padding-48 w3-card" style="display: none;">
+                
+              
+              <h5>Coffee 75 Bath </h5>
+                <p class="w3-text-grey">Regular coffee </p><br>
+                
+                <h5>Chocolato 100 Bath </h5>
+                <p class="w3-text-grey">Chocolate espresso with milk </p><br>
+                
+                <h5>Corretto 150 Bath </h5>
+                <p class="w3-text-grey">Whiskey and coffee</p><br>
+                
+                <h5>Thai tea 95 Bath</h5>
+                <p class="w3-text-grey">Thai tea with milk </p><br>
+                
+                <h5>Soda 35 Bath</h5>
+                <p class="w3-text-grey">Coke, Sprite, Fanta, etc. </p><br>
+                
+
+                <h5>Water 30 Bath</h5>
+                <p class="w3-text-grey"> Mineral water </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact" style="padding-bottom:32px;">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-48"><span class="w3-tag w3-wide">WHERE TO FIND US</span></h5>
+    <!-- <p>Find us at some address at some place.</p>
+    <img src="/w3images/map.jpg" class="w3-image" style="width:100%"> -->
+    <p><span class="w3-tag">Here</span> We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the <strong>biggest</strong> criteria of them all — both look and taste.</p>
+    
+    <p><strong>Reserve</strong> a table, ask for today's special, or just send us a message:</p>
+
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16 w3-border" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><center><button class="w3-button w3-black" type="submit">SEND MESSAGE</button></center></p>
+    </form>
+  </div>
+</div>
+
+<!-- End page content -->
+
+</div>
+
+<!-- Footer -->
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+  <p>Images from <a href="https://www.yokumoku.co.jp/en/store/tokyo/509/#tabArea2" target="_blank" class="w3-hover-text-green">YOKUMOKU</a> ありがとうございます.</p>
+</footer>
+
+
+<script>
+    function openMenu(evt, menuName) {
+        var i, x, tablinks;
+        x = document.getElementsByClassName("menu");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" w3-gray", "");
+        }
+        document.getElementById(menuName).style.display = "block";
+        evt.currentTarget.firstElementChild.className += " w3-gray";
+    }
+    document.getElementById("myLink").click();
+</script>
+
+</body>
+</html>
